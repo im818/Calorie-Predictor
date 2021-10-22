@@ -2127,7 +2127,7 @@ class MaskRCNN():
             layers = filter(lambda l: l.name not in exclude, layers)
 
         if by_name:
-            saving.load_weights_from_hdf5_group_by_name(f, layers)
+            saving.load_weights(filepath, by_name=by_name)
         else:
             saving.load_weights_from_hdf5_group(f, layers)
         if hasattr(f, 'close'):
